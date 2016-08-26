@@ -288,6 +288,71 @@ int main(int argc, char const *argv[])
 			cout<<matriz1;
 		}
 
+		if (opcion == 6)
+		{
+			int filas1, columnas1;
+			cout<<"Ingrese el numero de filas de la primera mariz: ";
+			cin>>filas1;
+			cout<<endl;
+			cout<<"Ingrese el numero de columnas de la primera matriz: ";
+			cin>>columnas1;
+			cout<<endl;
+			int** m1 = new int* [filas1];
+
+			for (int j = 0; j < filas1; j++) {
+				m1[j] = new int[columnas1]; 
+			}
+			for (int i = 0; i < filas1; i++){
+				for (int j = 0; j < columnas1; j++)
+				{
+					cout<<"Ingrese la posición Matriz["<<i<<"]["<<j<<"]: "; 
+					cin>>m1[i][j];
+					cout<<endl;
+				}
+			}
+			Matriz matriz1(filas1, columnas1);
+			matriz1.inicializarMatriz(m1);
+			cout<<"Matriz 1 llena"<<endl;
+			do
+			{
+				int filas2, columnas2;
+				cout<<"Ingrese el numero de filas de la segunda mariz: ";
+				cin>>filas2;
+				cout<<endl;
+				cout<<"Ingrese el numero de columnas de la segunda matriz: ";
+				cin>>columnas2;
+				cout<<endl;
+				if (filas2 != filas1 || columnas2 != columnas1)
+				{
+					cout<<"No se puede realizar la comparacion, el tamaño de la matriz2 debe ser igual a la matriz1"<<endl;
+					break;
+				}
+				int** m2 = new int* [filas2];
+				for (int j = 0; j < filas2; j++) {
+					m2[j] = new int[columnas2]; 
+				}	
+				for (int i = 0; i < filas2; i++)
+				{
+					for (int j = 0; j < columnas2; j++)
+					{
+						cout<<"Ingrese la posición Matriz["<<i<<"]["<<j<<"]: "; 
+						cin>>m2[i][j];
+						cout<<endl;
+					}
+				}
+				Matriz matriz2(filas2, columnas2);
+				matriz2.inicializarMatriz(m2);
+				cout<<"Matriz 2 llena"<<endl;
+				cout<<"Matriz 1 :"<<endl;
+				cout<<matriz1<<endl;
+				cout<<"Matriz 2 :"<<endl;
+				cout<<matriz2<<endl;
+				Matriz comparacion(filas2, columnas2);
+				
+				opcion=0;
+			} while(opcion != 0);
+		}
+
 	} while (opcion!=9);
 
 	return 0;

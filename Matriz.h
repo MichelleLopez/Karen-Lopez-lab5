@@ -19,6 +19,7 @@ class Matriz {
 		friend Matriz operator-(Matriz m1);
 		friend Matriz operator*(Matriz m1, Matriz m2);
 		friend Matriz operator++(Matriz m1);
+		bool Matriz operator==(Matriz m1, Matriz m2);
 
 		void invermat(double **a);
 

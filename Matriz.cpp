@@ -99,3 +99,18 @@ Matriz operator ++(Matriz m){ // Sobrecarga para la transpuesta
     }
     return temp;
 }
+
+bool operator ==(Matriz m1, Matriz m2){
+    Matriz temp(m1.filas, m2.columnas);
+
+    for(int i=0; i < m1.filas; i++){
+        for(int j=0; j < m1.columnas; j++){
+            if(m1.matriz[i][j] == m2.matriz[i][j])
+            {
+                return true;
+            }
+            else
+                {return false;}
+        }
+    }
+}
