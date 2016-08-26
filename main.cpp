@@ -50,7 +50,6 @@ int main(int argc, char const *argv[])
 			Matriz matriz1(filas1, columnas1);
 			matriz1.inicializarMatriz(m1);
 			cout<<"Matriz 1 llena"<<endl;
-			cout<<matriz1;
 			do
 			{
 				int filas2, columnas2;
@@ -62,7 +61,7 @@ int main(int argc, char const *argv[])
 				cout<<endl;
 				if (filas2 != filas1 && columnas2 != columnas1)
 				{
-					cout<<"El tamaño de la matriz2 debe ser igual a la matriz1";
+					cout<<"No se puede realizar la suma, el tamaño de la matriz2 debe ser igual a la matriz1"<<endl;
 					break;
 				}
 				int** m2 = new int* [filas2];
@@ -81,9 +80,13 @@ int main(int argc, char const *argv[])
 				Matriz matriz2(filas2, columnas2);
 				matriz2.inicializarMatriz(m2);
 				cout<<"Matriz 2 llena"<<endl;
-				cout<<matriz2;
+				cout<<"Matriz 1 :"<<endl;
+				cout<<matriz1<<endl;
+				cout<<"Matriz 2 :"<<endl;
+				cout<<matriz2<<endl;
 				Matriz suma(filas2, columnas2);
 				suma = matriz1 + matriz2;
+				cout<<"Suma:"<<endl;
 				cout<<suma;
 			} while(opcion != 0);
 		}
