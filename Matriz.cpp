@@ -88,5 +88,14 @@ Matriz operator *(Matriz m1, Matriz m2){
         }
     }
     return temp;
+}
 
+Matriz operator ++(Matriz m){ // Sobrecarga para la transpuesta
+    Matriz temp(m.filas, m.columnas);
+    for(int i=0; i < m.filas; i++){
+        for(int j=0; j < m.columnas; j++){
+            temp.matriz[i][j] = m.matriz[j][i]; 
+        }
+    }
+    return temp;
 }

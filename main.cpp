@@ -257,6 +257,37 @@ int main(int argc, char const *argv[])
 			} while(opcion != 0);
 		}
 
+		if (opcion == 5)
+		{
+			int filas1, columnas1;
+			cout<<"Ingrese el numero de filas de la matriz: ";
+			cin>>filas1;
+			cout<<endl;
+			cout<<"Ingrese el numero de columnas de la matriz: ";
+			cin>>columnas1;
+			cout<<endl;
+			int** m1 = new int* [filas1];
+
+			for (int j = 0; j < filas1; j++) {
+				m1[j] = new int[columnas1]; 
+			}
+			for (int i = 0; i < filas1; i++){
+				for (int j = 0; j < columnas1; j++)
+				{
+					cout<<"Ingrese la posición Matriz["<<i<<"]["<<j<<"]: "; 
+					cin>>m1[i][j];
+					cout<<endl;
+				}
+			}
+			Matriz matriz1(filas1, columnas1);
+			matriz1.inicializarMatriz(m1);
+			cout<<"Matriz llena"<<endl;
+			cout<<matriz1;
+			matriz1 = ++matriz1;
+			cout<<"El menos unitario de la matriz es:"<<endl;
+			cout<<matriz1;
+		}
+
 	} while (opcion!=9);
 
 	return 0;

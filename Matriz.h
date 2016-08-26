@@ -18,6 +18,7 @@ class Matriz {
 		friend Matriz operator-(Matriz m1, Matriz m2);
 		friend Matriz operator-(Matriz m1);
 		friend Matriz operator*(Matriz m1, Matriz m2);
+		friend Matriz operator++(Matriz m1);
 
 		void invermat(double **a);
 
