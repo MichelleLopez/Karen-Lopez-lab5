@@ -74,3 +74,19 @@ Matriz operator-(Matriz m1, Matriz m2){
     }
     return temp;
 }
+
+Matriz operator *(Matriz m1, Matriz m2){
+    Matriz temp(m1.filas, m2.columnas);
+
+    for(int i=0; i < m1.filas; i++){
+        for(int j=0; j < m1.columnas; j++){
+            temp.matriz[i][j] = 0;
+            for(int k=0; k < m1.columnas; k++){
+
+                temp.matriz[i][j]= temp.matriz[i][j]+ m1.matriz[i][k] * m2.matriz[k][j];
+            }   
+        }
+    }
+    return temp;
+
+}
