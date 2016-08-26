@@ -38,19 +38,28 @@ ostream &operator<<(ostream &salida, Matriz &m){
         for (int j = 0; j < m.columnas; j++) {
             salida<< m.matriz[i][j]<<" ";
         }
-        salida<<endl;
+        salida <<endl;
     }
     return salida;
 } 
 
-Matriz operator+(Matriz x, Matriz y){
-    Matriz temp(x.filas, x.columnas);
-    for(int i=0; i < x.filas; i++){
+Matriz operator+(Matriz m1, Matriz m2){
+    Matriz temp(m1.filas, m1.columnas);
+    for(int i=0; i < m1.filas; i++){
 
-        for(int j=0; j < x.columnas; j++){
-            temp.matriz[i][j] = x.matriz[i][j] + y.matriz[i][j]; 
+        for(int j=0; j < m1.columnas; j++){
+            temp.matriz[i][j] = m1.matriz[i][j] + m2.matriz[i][j]; 
         }
     }
     return temp;
 }
 
+Matriz operator-(Matriz x){
+    Matriz temp(x.filas, x.columnas);
+    for(int i=0; i < x.filas; i++){
+        for(int j=0; j < x.columnas; j++){
+            temp.matriz[i][j] = x.matriz[i][j] * -1; 
+        }
+    }
+    return temp;
+}
