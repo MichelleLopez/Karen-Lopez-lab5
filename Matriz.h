@@ -13,7 +13,7 @@ class Matriz {
 
 		void inicializarMatriz(int **x);
 		void printMatriz();
-		friend ostream& operator << (ostream &salida, Matriz &z);
+		friend ostream& operator << (ostream &salida, Matriz &m);
 		friend Matriz operator+(Matriz m1, Matriz m2);
 		friend Matriz operator-(Matriz m1, Matriz m2);
 		friend Matriz operator-(Matriz m1);

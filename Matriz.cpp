@@ -16,10 +16,10 @@ Matriz::Matriz(int n, int m) {
 Matriz::~Matriz(){
 }
 
-void Matriz::inicializarMatriz(int **x){
+void Matriz::inicializarMatriz(int **m){
     for(int i=0; i < filas; i++){
         for(int j=0; j < columnas; j++){
-            matriz[i][j] = x[i][j]; 
+            matriz[i][j] = m[i][j]; 
         }
     }
 }
@@ -54,11 +54,22 @@ Matriz operator+(Matriz m1, Matriz m2){
     return temp;
 }
 
-Matriz operator-(Matriz x){
-    Matriz temp(x.filas, x.columnas);
-    for(int i=0; i < x.filas; i++){
-        for(int j=0; j < x.columnas; j++){
-            temp.matriz[i][j] = x.matriz[i][j] * -1; 
+Matriz operator-(Matriz m){
+    Matriz temp(m.filas, m.columnas);
+    for(int i=0; i < m.filas; i++){
+        for(int j=0; j < m.columnas; j++){
+            temp.matriz[i][j] = m.matriz[i][j] * -1; 
+        }
+    }
+    return temp;
+}
+
+Matriz operator-(Matriz m1, Matriz m2){
+    Matriz temp(m1.filas, m1.columnas);
+    for(int i=0; i < m1.filas; i++){
+
+        for(int j=0; j < m1.columnas; j++){
+            temp.matriz[i][j] = m1.matriz[i][j] - m2.matriz[i][j]; 
         }
     }
     return temp;
